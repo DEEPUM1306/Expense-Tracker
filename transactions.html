@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Transactions – Expense Tracker V2</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <nav>
+    <span class="nav-brand">💰 Expense Tracker V2</span>
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="transactions.html">History</a>
+      <a href="reports.html">Reports</a>
+    </div>
+    <div class="nav-right">
+      <button id="dark-toggle">🌙 Dark Mode</button>
+      <button id="logout-btn">Logout</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h2>Transaction History</h2>
+
+    <div class="filters">
+      <input type="text" id="search" placeholder="Search..."/>
+      <select id="filter-category">
+        <option value="">All Categories</option>
+        <option>Food</option><option>Travel</option><option>Shopping</option>
+        <option>Education</option><option>Health</option><option>Bills</option>
+        <option>Salary</option><option>Freelance</option><option>Business</option>
+      </select>
+      <select id="filter-type">
+        <option value="">All Types</option>
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+      </select>
+      <select id="sort-by">
+        <option value="latest">Latest</option>
+        <option value="oldest">Oldest</option>
+        <option value="highest">Highest Amount</option>
+        <option value="lowest">Lowest Amount</option>
+      </select>
+    </div>
+
+    <table id="transaction-table">
+      <thead>
+        <tr><th>Date</th><th>Title</th><th>Category</th><th>Type</th><th>Amount</th><th>Actions</th></tr>
+      </thead>
+      <tbody id="table-body"></tbody>
+    </table>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/transactions.js"></script>
+  <script src="js/history.js"></script>
+</body>
+</html>

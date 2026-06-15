@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login – Expense Tracker </title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <div class="auth-container">
+    <h1>Expense Tracker</h1>
+    <div class="tabs">
+      <button class="tab active" onclick="showTab('login')">Login</button>
+      <button class="tab" onclick="showTab('register')">Register</button>
+    </div>
+
+    <!-- Login Form -->
+    <form id="login-form" class="auth-form">
+      <input type="email" id="login-email" placeholder="Email" required/>
+      <input type="password" id="login-password" placeholder="Password" required/>
+      <p class="error" id="login-error"></p>
+      <button type="submit">Login</button>
+    </form>
+
+    <!-- Register Form -->
+    <form id="register-form" class="auth-form hidden">
+      <input type="text" id="reg-name" placeholder="Full Name" required/>
+      <input type="email" id="reg-email" placeholder="Email" required/>
+      <input type="password" id="reg-password" placeholder="Password (min 8 chars)" required/>
+      <input type="password" id="reg-confirm" placeholder="Confirm Password" required/>
+      <p class="error" id="reg-error"></p>
+      <button type="submit">Register</button>
+    </form>
+  </div>
+  <script src="js/auth.js"></script>
+</body>
+</html>

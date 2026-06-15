@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reports – Expense Tracker V2</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <nav>
+    <span class="nav-brand">💰 Expense Tracker V2</span>
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="transactions.html">History</a>
+      <a href="reports.html">Reports</a>
+    </div>
+    <div class="nav-right">
+      <button id="dark-toggle">🌙 Dark Mode</button>
+      <button id="logout-btn">Logout</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h2>Monthly Reports</h2>
+    <select id="month-select">
+      <option value="0">January</option><option value="1">February</option>
+      <option value="2">March</option><option value="3">April</option>
+      <option value="4">May</option><option value="5">June</option>
+      <option value="6">July</option><option value="7">August</option>
+      <option value="8">September</option><option value="9">October</option>
+      <option value="10">November</option><option value="11">December</option>
+    </select>
+
+    <div class="cards" id="report-summary">
+      <div class="card green"><h4>Income</h4><p id="r-income">₹0</p></div>
+      <div class="card red"><h4>Expense</h4><p id="r-expense">₹0</p></div>
+      <div class="card blue"><h4>Savings</h4><p id="r-savings">₹0</p></div>
+    </div>
+
+    <h3>Monthly Trend</h3>
+    <canvas id="bar-chart"></canvas>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/transactions.js"></script>
+  <script src="js/reports.js"></script>
+</body>
+</html>

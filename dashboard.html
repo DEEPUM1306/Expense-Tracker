@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard – Expense Tracker </title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <nav>
+    <span class="nav-brand"> Expense Tracker </span>
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="transactions.html">History</a>
+      <a href="reports.html">Reports</a>
+    </div>
+    <div class="nav-right">
+      <button id="dark-toggle">🌙 Dark Mode</button>
+      <button id="logout-btn">Logout</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h2>Welcome, <span id="user-name"></span></h2>
+
+    <!-- Summary Cards -->
+    <div class="cards">
+      <div class="card green"><h4>Total Income</h4><p id="total-income">₹0</p></div>
+      <div class="card red"><h4>Total Expense</h4><p id="total-expense">₹0</p></div>
+      <div class="card blue"><h4>Balance</h4><p id="balance">₹0</p></div>
+      <div class="card purple"><h4>Savings</h4><p id="savings">₹0</p></div>
+    </div>
+
+    <!-- Add Transaction -->
+    <div class="form-section">
+      <h3>Add Transaction</h3>
+      <form id="add-form">
+        <input type="text" id="t-title" placeholder="Transaction Name" required/>
+        <input type="number" id="t-amount" placeholder="Amount" required/>
+        <input type="date" id="t-date" required/>
+        <select id="t-type">
+          <option value="income">Income</option>
+          <option value="expense">Expense</option>
+        </select>
+        <select id="t-category"></select>
+        <button type="submit">Add</button>
+      </form>
+    </div>
+
+    <!-- Recent Transactions -->
+    <div class="section">
+      <h3>Recent Transactions</h3>
+      <ul id="recent-list"></ul>
+    </div>
+
+    <!-- Pie Chart -->
+    <div class="section">
+      <h3>Expense Distribution</h3>
+      <canvas id="pie-chart" width="300" height="300"></canvas>
+    </div>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/transactions.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/charts.js"></script>
+</body>
+</html>
